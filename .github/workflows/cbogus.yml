@@ -1,0 +1,15 @@
+name: cbogus
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/cbogus.yml'
+jobs:
+  copilot-setup-steps:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    zzbogus-not-a-key: 1
+    steps:
+      - name: marker
+        run: echo "RAN-CBOGUS=yes job={{ github.job }}"
