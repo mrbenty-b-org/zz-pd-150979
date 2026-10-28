@@ -1,0 +1,15 @@
+name: cgood
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/cgood.yml'
+jobs:
+  copilot-setup-steps:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    timeout-minutes: 5
+    steps:
+      - name: marker
+        run: echo "RAN-CGOOD=yes job={{ github.job }}"
