@@ -1,0 +1,17 @@
+name: arm-services
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/arm-services.yml'
+jobs:
+  copilot-setup-steps:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    services:
+      probe:
+        image: alpine:3
+    steps:
+      - name: marker
+        run: echo "RAN-ARM-SERVICES=yes job={{ github.job }}"
