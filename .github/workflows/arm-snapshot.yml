@@ -1,0 +1,15 @@
+name: arm-snapshot
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/arm-snapshot.yml'
+jobs:
+  copilot-setup-steps:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    snapshot: true
+    steps:
+      - name: marker
+        run: echo "RAN-ARM-SNAPSHOT=yes job={{ github.job }}"
